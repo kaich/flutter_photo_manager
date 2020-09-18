@@ -68,7 +68,7 @@
 
   PHFetchResult<PHAssetCollection *> *smartAlbumResult = [PHAssetCollection
           fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum
-                                subtype:PHAssetCollectionSubtypeAlbumRegular
+                                subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary
                                 options:fetchCollectionOptions];
   [self injectAssetPathIntoArray:array
                           result:smartAlbumResult
