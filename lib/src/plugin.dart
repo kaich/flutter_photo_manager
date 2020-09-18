@@ -28,7 +28,7 @@ class Plugin with BasePlugin, IosPlugin, AndroidPlugin {
       "type": type,
       "hasAll": hasAll,
       "onlyAll": onlyAll,
-      "option": optionGroup.toMap(),
+      "option": optionGroup == null ? null : optionGroup.toMap(),
     });
     if (result == null) {
       return [];

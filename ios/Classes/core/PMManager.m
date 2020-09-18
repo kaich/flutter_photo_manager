@@ -40,14 +40,14 @@
 
 - (NSArray<PMAssetPathEntity *> *)getGalleryList:(int)type hasAll:(BOOL)hasAll onlyAll:(BOOL)onlyAll option:(PMFilterOptionGroup *)option {
   NSMutableArray<PMAssetPathEntity *> *array = [NSMutableArray new];
-  PHFetchOptions *assetOptions = [self getAssetOptions:type filterOption:option];
+  PHFetchOptions *assetOptions = option == nil ? nil : [self getAssetOptions:type filterOption:option];
 
   PHFetchOptions *fetchCollectionOptions = [PHFetchOptions new];
 
 
   if (onlyAll) {
     PHFetchResult<PHAssetCollection *> *result = [PHAssetCollection
-            fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum
+            fetchAssetCollectionsWithType: PHAssetCollectionTypeAlbum
                                   subtype:PHAssetCollectionSubtypeAlbumRegular
                                   options:fetchCollectionOptions];
 
@@ -130,9 +130,11 @@
       continue;
     }
 
-    if (entity.assetCount && entity.assetCount > 0) {
+//    if (entity.assetCount && entity.assetCount > 0) {
+//      [array addObject:entity];
+//    }
+      
       [array addObject:entity];
-    }
   }
 }
 

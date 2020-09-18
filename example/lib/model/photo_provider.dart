@@ -133,7 +133,7 @@ class PhotoProvider extends ChangeNotifier {
       type: type,
       hasAll: hasAll,
       onlyAll: onlyAll,
-      filterOption: option,
+      filterOption: null,
     );
 
     galleryList.sort((s1, s2) {

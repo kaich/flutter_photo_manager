@@ -101,6 +101,9 @@
 }
 
 + (PMFilterOptionGroup *)convertMapToOptionContainer:(NSDictionary *)map {
+  if(map == nil || [map isKindOfClass: [NSNull class]]) {
+    return  nil;
+  }
   PMFilterOptionGroup *container = [PMFilterOptionGroup alloc];
   NSDictionary *image = map[@"image"];
   NSDictionary *video = map[@"video"];

@@ -35,7 +35,6 @@ class PhotoManager {
     if (onlyAll) {
       assert(hasAll, "If only is true, then the hasAll must be not null.");
     }
-    filterOption ??= FilterOptionGroup();
 
     assert(
         type.index != 0, 'The request type must have video, image or audio.');
