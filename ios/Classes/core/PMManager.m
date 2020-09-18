@@ -631,6 +631,9 @@
 }
 
 - (PHFetchOptions *)getAssetOptions:(int)type filterOption:(PMFilterOptionGroup *)optionGroup {
+  if(optionGroup == nil || [optionGroup isKindOfClass:NSNull.class]) {
+    return nil;
+  }
   PHFetchOptions *options = [PHFetchOptions new];
   options.sortDescriptors = [optionGroup sortCond];
 
