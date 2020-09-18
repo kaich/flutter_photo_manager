@@ -56,7 +56,7 @@ class Plugin with BasePlugin, IosPlugin, AndroidPlugin {
       "page": page,
       "pageCount": pageCount,
       "type": type,
-      "option": optionGroup.toMap(),
+      "option": optionGroup == null ? null : optionGroup.toMap(),
     });
 
     return ConvertUtils.convertToAssetList(result);
@@ -74,7 +74,7 @@ class Plugin with BasePlugin, IosPlugin, AndroidPlugin {
       "type": typeInt,
       "start": start,
       "end": end,
-      "option": optionGroup.toMap(),
+      "option": optionGroup == null ? null : optionGroup.toMap(),
     });
 
     return ConvertUtils.convertToAssetList(map);
@@ -127,7 +127,7 @@ class Plugin with BasePlugin, IosPlugin, AndroidPlugin {
         "id": id,
         "timestamp": 0,
         "type": type,
-        "option": optionGroup.toMap(),
+        "option": optionGroup == null ? null : optionGroup.toMap(),
       },
     );
   }
